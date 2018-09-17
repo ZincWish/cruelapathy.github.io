@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="MyBatis,注解," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="zouwu&apos;s blog created at 2018-09-15 01:29">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zw&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="因为最初设计时，MyBatis是一个 XML 驱动的框架。配置信息是基于 XML 的，而且映射语句也是定义在 XML 中的。而到了MyBatis 3，就有新选择了。MyBatis 3构建在全面且强大的基于 Java 语言的配置 API 之上。这个配置 API 是基于XML 的 MyBatis 配置的基础，也是新的基于注解配置的基础。注解提供了一种简单的方式来实现简单映射语句，而不会引入大量的开">
+<meta name="keywords" content="MyBatis,注解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于注解的MyBatis配置">
+<meta property="og:url" content="http://yoursite.com/2018/09/16/基于注解的MyBatis配置/index.html">
 <meta property="og:site_name" content="zw&#39;s blog">
-<meta property="og:description" content="zouwu&apos;s blog created at 2018-09-15 01:29">
+<meta property="og:description" content="因为最初设计时，MyBatis是一个 XML 驱动的框架。配置信息是基于 XML 的，而且映射语句也是定义在 XML 中的。而到了MyBatis 3，就有新选择了。MyBatis 3构建在全面且强大的基于 Java 语言的配置 API 之上。这个配置 API 是基于XML 的 MyBatis 配置的基础，也是新的基于注解配置的基础。注解提供了一种简单的方式来实现简单映射语句，而不会引入大量的开">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-17T14:10:19.232Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zw&#39;s blog">
-<meta name="twitter:description" content="zouwu&apos;s blog created at 2018-09-15 01:29">
+<meta name="twitter:title" content="基于注解的MyBatis配置">
+<meta name="twitter:description" content="因为最初设计时，MyBatis是一个 XML 驱动的框架。配置信息是基于 XML 的，而且映射语句也是定义在 XML 中的。而到了MyBatis 3，就有新选择了。MyBatis 3构建在全面且强大的基于 Java 语言的配置 API 之上。这个配置 API 是基于XML 的 MyBatis 配置的基础，也是新的基于注解配置的基础。注解提供了一种简单的方式来实现简单映射语句，而不会引入大量的开">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/16/基于注解的MyBatis配置/"/>
 
 
 
 
 
-  <title>zw's blog</title>
+  <title>基于注解的MyBatis配置 | zw's blog</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -227,9 +228,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -259,9 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/16/基于注解的MyBatis配置/" itemprop="url">基于注解的MyBatis配置</a></h1>
+          <h1 class="post-title" itemprop="name headline">基于注解的MyBatis配置</h1>
         
 
         <div class="post-meta">
@@ -311,9 +310,7 @@
       
 
       
-        
-          
-            <p>　　因为最初设计时，MyBatis是一个 XML 驱动的框架。配置信息是基于 XML 的，而且映射语句也是定义在 XML 中的。而到了MyBatis 3，就有新选择了。MyBatis 3构建在全面且强大的基于 Java 语言的配置 API 之上。这个配置 API 是基于XML 的 MyBatis 配置的基础，也是新的基于注解配置的基础。注解提供了一种简单的方式来实现简单映射语句，而不会引入大量的开销。</p>
+        <p>　　因为最初设计时，MyBatis是一个 XML 驱动的框架。配置信息是基于 XML 的，而且映射语句也是定义在 XML 中的。而到了MyBatis 3，就有新选择了。MyBatis 3构建在全面且强大的基于 Java 语言的配置 API 之上。这个配置 API 是基于XML 的 MyBatis 配置的基础，也是新的基于注解配置的基础。注解提供了一种简单的方式来实现简单映射语句，而不会引入大量的开销。</p>
 <p>　　不幸的是，Java 注解的的表达力和灵活性十分有限。尽管很多时间都花在调查、设计和试验上，最强大的 MyBatis 映射并不能用注解来构建——并不是在开玩笑，的确是这样。比方说，C#属性就没有这些限制，因此 MyBatis.NET 将会比 XML有更丰富的选择。也就是说，基于 Java 注解的配置离不开它的特性。</p>
 <h3 id="常见的注解"><a href="#常见的注解" class="headerlink" title="常见的注解"></a>常见的注解</h3><p>目前我使用过的常用的注解有：</p>
 <p><code>@Insert</code>:</p>
@@ -330,8 +327,6 @@
 <p>如果你的映射方法的形参有多个，这个注解使用在映射方法的参数上就能为它们取自定义名字。若不给出自定义名字，多参数则先以”param”做前缀，再加上它们的参数位置作为参数别名。例如<code>#{param1}</code>, <code>#{param2}</code>，这个是默认值。如果注解是<code>@Param</code>(“person”)，那么参数就会被命名为<code>#{peson}</code>。</p>
 <p><code>@ResultMype</code></p>
 
-          
-        
       
     </div>
     
@@ -346,137 +341,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/15/第一篇博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhou wu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zw's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/15/第一篇博客/" itemprop="url">第一篇博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-15T01:40:23+08:00">
-                2018-09-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/MyBatis/" rel="tag"># MyBatis</a>
           
-            
+            <a href="/tags/注解/" rel="tag"># 注解</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>　　终于在深夜选择好了一款markdown编辑器(严重选择困难症)，开始了我的博客(希望不会马上结束)。想建立一个博客很久了，也是一直拖延到现在，其实也是因为不知道该写些什么。</p>
-<p>　　如今毕业也三个月了，正式开始了工作，工作中还是碰到了不少可以记录下来的问题。所以暂时就打算用博客来记录一些工作中碰到过的，个人觉得可以记录的一些东西。嗯，其实是因为技术太菜了没有什么原创的东西可以分享。</p>
-<p>　　关于博客的框架，选之前也看了不少的对比(每错，选择困难症)，主要是Hexo和Hugo之间的对比，据网上的资料说，当页面数量很多的时候，Hexo生成一次需要很久的时间，不如采用Go语言的Hugo框架生成页面的速度快。我也一度尝试了一下Hugo，无奈Hugo没有Next主题，之前看别人博客的时候就一直很钟意这个主题，真的很好看。于是还是换回了Hexo(也觉得自己肯定写不了很多博客…)。Hugo上也有网友移植了Next主题，可是移植的并不完美，对主题不介意或者Hugo的主题也有符合你审美的同学可以尝试下使用Hugo。</p>
-<p>　　最后，希望可以保持写博客的好习惯。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/15/第一篇博客/" rel="next" title="第一篇博客">
+                <i class="fa fa-chevron-left"></i> 第一篇博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -486,10 +382,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -497,6 +394,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -517,8 +418,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -569,6 +479,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的注解"><span class="nav-number">1.</span> <span class="nav-text">常见的注解</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -702,6 +628,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
